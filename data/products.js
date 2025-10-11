@@ -75,7 +75,6 @@ export function loadProducts(fun) {
     });
 
     console.log('load products');
-
     fun();
   });
 
@@ -84,6 +83,7 @@ export function loadProducts(fun) {
 };
 
 //Put let instead of const to fix the variable naming issue that was conflicting with the code just above.
+//changed it back
 
 export let products = [
   {
