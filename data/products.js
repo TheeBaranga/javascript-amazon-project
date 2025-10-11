@@ -62,6 +62,11 @@ console.log(date);
 console.log(date.toLocaleTimeString());
 */
 
+export let products = [];
+
+function loadProductsFetch() {
+  fetch
+}
 
 export function loadProducts(fun) {
   const xhr = new XMLHttpRequest();
@@ -82,10 +87,8 @@ export function loadProducts(fun) {
   xhr.send();
 };
 
-//Put let instead of const to fix the variable naming issue that was conflicting with the code just above.
-//changed it back
-
-export let products = [
+/*
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -751,3 +754,4 @@ export let products = [
   return new Product(productDetails);
 });
 
+*/
