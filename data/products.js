@@ -53,7 +53,7 @@ class Clothing extends Product {
       Size Chart
       </a>
     `;
-  }
+  }//returns the size chart link for clothes only 
 }
 
 /*
