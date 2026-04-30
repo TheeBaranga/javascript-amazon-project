@@ -5,7 +5,7 @@ import { formatCurrency } from './utils/money.js';
 
 loadProducts(renderProductsGrid);
 
-function renderProductsGrid() {} {
+function renderProductsGrid() {
 
   let productsHTML = '';
 
@@ -66,7 +66,7 @@ function renderProductsGrid() {} {
   document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
 
-
+/*
   function updateCartQuantity() {
     let cartQuantity = 0;
       cart.forEach((cartItem) => {
@@ -76,6 +76,8 @@ function renderProductsGrid() {} {
       document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 
   }
+*/
+  
 
   document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
