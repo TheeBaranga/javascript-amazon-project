@@ -3,18 +3,20 @@
   <head></head>
   <body>
     <button onclick="
-        guess = 'heads';
-        playGame(guess);
+        playGame('heads');
       ">heads</button>
     <button onclick="
-        guess = 'tails';
-        playGame(guess);
+        playGame('tails');
       ">tails</button>
     <script>
 
       function playGame(guess) {
+        const storedScore = localStorage.getItem('score');
+        let score = JSON.parse(storedScore) || { wins: 0, losses: 0 };
+
         const randomNumber = Math.random();
         const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
 
         if (guess === result) {
           console.log('You win!');
@@ -25,14 +27,12 @@
           score.losses++; 
           console.log(score);  
         }
-      }
+
+
+        const storeScore = JSON.stringify(score);
+        localStorage.setItem('score', storeScore);
       
-
-      let score = {
-            wins: 0,
-            losses: 0
-      }
-
+        }
     </script>
   </body>
 </html>
