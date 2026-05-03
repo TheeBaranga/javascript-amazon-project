@@ -18,11 +18,21 @@
 
         if (guess === result) {
           console.log('You win!');
+          score.wins++;
+          console.log(score);
         } else {
           console.log('You lose!');
+          score.losses++; 
+          console.log(score);  
         }
       }
       
+
+      let score = {
+            wins: 0,
+            losses: 0
+      }
+
     </script>
   </body>
 </html>
