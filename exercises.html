@@ -9,44 +9,36 @@
     ">Show Quantity</button>
 
     <button onclick="
-      cartQuantity++;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(1);
     ">Add to Cart</button>
 
     <button onclick="
-      cartQuantity += 2;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(2);
     ">+2</button>
 
     <button onclick="
-      cartQuantity = cartQuantity + 3;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(3);
     ">+3</button>
 
     <button onclick="
-      cartQuantity += 4;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(4);
     ">+4</button>
 
     <button onclick="
-      cartQuantity += 5;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(5);
     ">+5</button>
 
     <!-- vvv This code was changed. vvv -->
     <button onclick="
-      cartQuantity--;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(-1);
       ">Remove from cart</button>
 
     <button onclick="
-      cartQuantity -= 2;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(-2);
     ">-2</button>
 
     <button onclick="
-      cartQuantity -= 3;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      conf_ability(-3);
     ">-3</button>
     <!-- ^^^ This code was changed. ^^^ -->
 
@@ -58,6 +50,14 @@
 
     <script>
       let cartQuantity = 0;
+      function conf_ability (num) {
+        if (cartQuantity + num > 10) {
+            alert("The cart is full");
+        }else{
+            cartQuantity = cartQuantity + num;
+            console.log(`Cart quantity: ${cartQuantity}`);
+        }
+      }
     </script>
   </body>
 </html>
