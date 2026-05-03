@@ -9,36 +9,36 @@
     ">Show Quantity</button>
 
     <button onclick="
-      conf_ability(1);
+      updateCalculation(1);
     ">Add to Cart</button>
 
     <button onclick="
-      conf_ability(2);
+      updateCalculation(2);
     ">+2</button>
 
     <button onclick="
-      conf_ability(3);
+      updateCalculation(3);
     ">+3</button>
 
     <button onclick="
-      conf_ability(4);
+      updateCalculation(4);
     ">+4</button>
 
     <button onclick="
-      conf_ability(5);
+      updateCalculation(5);
     ">+5</button>
 
     <!-- vvv This code was changed. vvv -->
     <button onclick="
-      conf_ability(-1);
+      updateCalculation(-1);
       ">Remove from cart</button>
 
     <button onclick="
-      conf_ability(-2);
+      updateCalculation(-2);
     ">-2</button>
 
     <button onclick="
-      conf_ability(-3);
+      updateCalculation(-3);
     ">-3</button>
     <!-- ^^^ This code was changed. ^^^ -->
 
@@ -50,7 +50,7 @@
 
     <script>
       let cartQuantity = 0;
-      function conf_ability (num) {
+      function updateCalculation (num) {
         if (cartQuantity + num > 10) {
             alert("The cart is full");
             return;
