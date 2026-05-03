@@ -53,10 +53,14 @@
       function conf_ability (num) {
         if (cartQuantity + num > 10) {
             alert("The cart is full");
-        }else{
-            cartQuantity = cartQuantity + num;
-            console.log(`Cart quantity: ${cartQuantity}`);
+            return;
         }
+        if (cartQuantity + num < 0) {
+            alert('Not enough items in cart');
+            return;
+        }
+        alert('Not enough items in cart');
+        return;
       }
     </script>
   </body>
