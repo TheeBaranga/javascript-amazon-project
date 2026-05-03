@@ -36,6 +36,13 @@
             return;
         }
         comparePrice(product1,product2);
+
+        function isSameProduct(product1,product2) {
+            return product1.name === product2.name && 
+            product1.price === product2.price? 
+            true : false;
+        }
+        console.log(isSameProduct(product1,product2));
     </script>
 </body>
 </html>
