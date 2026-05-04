@@ -1,0 +1,9 @@
+.is-toggled {
+    background-color: black;
+    color: white;
+}
+
+.isnt-toggled {
+    background-color: white;
+    color: black;
+}

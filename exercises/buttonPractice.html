@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="buttonPractice.css">
+</head>
+<body>
+    <button style="width: 170px; padding: 10px 0px; border: none; color: #000; background-color: rgb(255, 216, 20); border-radius: 50px;">Add to Cart</button>
+    <div style="margin: 30px 0px;">
+        <button style="background-color: #000; padding: 10px; border: none; color: aliceblue; border-radius: 5px; margin-right: 10px;">Request now</button>
+        <button style="border: none; padding: 10px; border-radius: 5px;">Schedule for later</button>
+        <button class="js-button">Test</button>
+    </div>
+
+    <div>
+        <button class="is-toggled">Gaming</button>
+    </div>
+    <script>
+        console.log(document.querySelector('.js-button').classList.contains('js-button'));
+
+        const toggle = document.querySelector('.is-toggled');
+
+        
+        document.querySelector('.is-toggled').addEventListener('click', function() {
+            if (this.classList.contains('is-toggled')) {
+                this.classList.replace('is-toggled', 'isnt-toggled');
+            }else {
+                this.classList.replace('isnt-toggled', 'is-toggled');
+            }
+        });
+
+    </script>
+</body>
+</html>
