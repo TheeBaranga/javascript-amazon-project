@@ -3,6 +3,7 @@
   <head></head>
   <body>
     <p>
+      <p id="feedback"></p>
       <button onclick="
         updateCalculation('1');
       ">1</button>
@@ -73,6 +74,8 @@
         calculation = eval(calculation);
         console.log(calculation);
         localStorage.setItem('calculation', calculation);
+        document.getElementById('feedback').innerHTML = calculation;
+
       ">=</button>
 
       <button onclick="
@@ -85,16 +88,19 @@
         calculation = '';
         console.log(calculation);
         localStorage.setItem('calculation', calculation);
+        document.getElementById('feedback').innerHTML = calculation;
       ">Clear</button>
     </p>
 
     <script>
       let calculation = localStorage.getItem('calculation') || '';
 
+      document.getElementById('feedback').innerHTML = calculation;
+
       function updateCalculation(value) {
         calculation += value;
         localStorage.setItem('calculation', calculation);
-        console.log(calculation);
+        document.getElementById('feedback').innerHTML = calculation;
       }
     </script>
   </body>
