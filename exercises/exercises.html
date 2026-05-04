@@ -47,6 +47,7 @@
       console.log('Cart was reset.');
       console.log(`Cart quantity: ${cartQuantity}`);
     ">Reset Cart</button>
+    <p></p>
 
     <script>
       let cartQuantity = 0;
@@ -59,9 +60,11 @@
             alert('Not enough items in cart');
             return;
         }
-        alert('Not enough items in cart');
-        return;
+        cartQuantity += num;
+        document.querySelector('p').innerHTML = 'Cart quantity: ' + cartQuantity;
       }
+
+      document.querySelector('p').innerHTML = 'Cart quantity: ' + cartQuantity;
     </script>
   </body>
 </html>
