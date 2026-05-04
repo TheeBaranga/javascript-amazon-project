@@ -7,3 +7,23 @@
     background-color: white;
     color: black;
 }
+
+.is-toggled2 {
+    background-color: black;
+    color: white;
+}
+
+.isnt-toggled2 {
+    background-color: white;
+    color: black;
+}
+
+.is-toggled3 {
+    background-color: black;
+    color: white;
+}
+
+.isnt-toggled3 {
+    background-color: white;
+    color: black;
+}

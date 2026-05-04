@@ -15,19 +15,51 @@
     </div>
 
     <div>
-        <button class="is-toggled">Gaming</button>
+        <button class="isnt-toggled">Gaming</button>
+        <button class="isnt-toggled2">Music</button>
+        <button class="isnt-toggled3">Tech</button>
     </div>
     <script>
         console.log(document.querySelector('.js-button').classList.contains('js-button'));
 
-        const toggle = document.querySelector('.is-toggled');
+        const toggle = document.querySelector('.isnt-toggled');
+        const toggle2 = document.querySelector('.isnt-toggled2');
+        const toggle3 = document.querySelector('.isnt-toggled3');
 
         
-        document.querySelector('.is-toggled').addEventListener('click', function() {
-            if (this.classList.contains('is-toggled')) {
-                this.classList.replace('is-toggled', 'isnt-toggled');
-            }else {
+        document.querySelector('.isnt-toggled').addEventListener('click', function() {
+            if (this.classList.contains('isnt-toggled') && toggle2.classList.contains('isnt-toggled2') && toggle3.classList.contains('isnt-toggled3')) {
                 this.classList.replace('isnt-toggled', 'is-toggled');
+            }else if (toggle2.classList.contains('is-toggled2')) {
+                toggle2.classList.replace('is-toggled2', 'isnt-toggled2');
+                toggle.classList.replace('isnt-toggled', 'is-toggled');
+            }else {
+                toggle3.classList.replace('is-toggled3', 'isnt-toggled3');
+                toggle.classList.replace('isnt-toggled', 'is-toggled');
+            }
+        });
+
+        document.querySelector('.isnt-toggled2').addEventListener('click', function() {
+            if (this.classList.contains('isnt-toggled2') && toggle.classList.contains('isnt-toggled') && toggle3.classList.contains('isnt-toggled3')) {
+                this.classList.replace('isnt-toggled2', 'is-toggled2');
+            }else if (toggle.classList.contains('is-toggled')) {
+                toggle.classList.replace('is-toggled', 'isnt-toggled');
+                toggle2.classList.replace('isnt-toggled2', 'is-toggled2');
+            }else {
+                toggle3.classList.replace('is-toggled3', 'isnt-toggled3');
+                toggle2.classList.replace('isnt-toggled2', 'is-toggled2');
+            }
+        });
+
+        document.querySelector('.isnt-toggled3').addEventListener('click', function() {
+            if (this.classList.contains('isnt-toggled3') && toggle2.classList.contains('isnt-toggled2') && toggle.classList.contains('isnt-toggled')) {
+                this.classList.replace('isnt-toggled3', 'is-toggled3');
+            }else if (toggle2.classList.contains('is-toggled2')) {
+                toggle2.classList.replace('is-toggled2', 'isnt-toggled2');
+                toggle3.classList.replace('isnt-toggled3', 'is-toggled3');
+            }else {
+                toggle.classList.replace('is-toggled', 'isnt-toggled');
+                toggle3.classList.replace('is-toggled3', 'isnt-toggled3');
             }
         });
 
