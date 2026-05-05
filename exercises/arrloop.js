@@ -18,3 +18,15 @@ function findIndex(array, word) {
     }
     return -1;
 }
+
+food = ['egg', 'apple', 'banana', 'egg', 'grape'];
+function removeEgg(array) {
+    let newarray = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] !== 'egg') {
+            newarray.push(array[i]);
+        }
+    }
+    return newarray;
+}
+
