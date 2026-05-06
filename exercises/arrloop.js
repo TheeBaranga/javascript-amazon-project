@@ -19,14 +19,33 @@ function findIndex(array, word) {
     return -1;
 }
 
-food = ['egg', 'apple', 'banana', 'egg', 'grape'];
-function removeEgg(array) {
+const food = ['egg', 'apple', 'banana', 'egg', 'grape'];
+
+export function removeEgg(array) {
+    const reversedArray = array.toReversed();
     let newarray = [];
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] !== 'egg') {
-            newarray.push(array[i]);
-        }
+    let removed = 0;
+    for (let i = 0; i < reversedArray.length; i++) {
+        if (reversedArray[i] === 'egg' && removed < 2) {
+            removed++;
+        } else {
+            newarray.push(reversedArray[i]);
+        }   
     }
-    return newarray;
+    return newarray.toReversed();
+}
+
+ export function countOccurrences() {
+    for (let i = 1; i <= 20; i++) {
+    if (i%3 === 0 && i%5 === 0) {
+        console.log('fizzbuzz');
+    } else if (i%3 === 0) {
+        console.log('fizz');
+    } else if (i%5 === 0) {
+        console.log('buzz');
+    } else {
+        console.log(i);
+    }
+}
 }
 
