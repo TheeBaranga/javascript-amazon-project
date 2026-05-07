@@ -49,3 +49,16 @@ export function removeEgg(array) {
 }
 }
 
+colors = ['green', 'red', 'blue', 'yellow', 'red'];
+
+array.forEach(element => {
+    function findIndex(array, col) {
+        newcol = [];
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] !== col) {
+            newcol.push(array[i]);
+          }
+        }
+        return newcol;
+      }
+});
