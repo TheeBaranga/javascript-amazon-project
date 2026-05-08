@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id = "js-title">Document</title>
+    <title>App</title>
 </head>
 <body>
     <button id="js-button" onclick="
@@ -24,8 +24,6 @@
             }, 2000); 
         });
 
-        const mess = document.getElementById('js-title');
-
         let number = 0;
 
         document.getElementById('js-add').addEventListener('click', () => {
@@ -34,16 +32,23 @@
         });
 
         document.getElementById('js-remove').addEventListener('click', () => {
-            number--;
-            console.log(number);
+            if (number > 0) {
+                number--;
+                console.log(number);
+            }
         });
                 
         setInterval(() => {
-            mess.innerHTML = 'App';
-            setTimeout(() => {
-                mess.innerHTML = `(${number}) new messages`;
-            }, 1000);
-        },3000);
+            if (number === 0) {
+                document.title = 'App';
+            } else {
+                document.title = `(${number}) new messages`;
+
+                setTimeout(() => {
+                    document.title = 'App';
+                }, 1000);
+            }
+        }, 3000);
 
     </script>
 </body>
