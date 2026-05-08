@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addNum(array, num) {
+            return array.map((value) => value + num);
+        }
+
+        console.log(addNum([1, 2, 3], 2));
+
+
+        let eggsRemoved = 0;
+
+        function removeEgg(foods) {
+             return foods.filter((food) => {
+                if (food === 'egg' && eggsRemoved < 2) {
+                    eggsRemoved++;
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        }
+
+        console.log(removeEgg(['egg', 'apple', 'banana', 'egg', 'ham', 'egg']));
+        
+    </script>
+</body>
+</html>
