@@ -38,8 +38,8 @@ export function addToCart(productId, quantity) {
     } else {
         // MODIFIED: Sets initial quantity to the selected dropdown amount
         cart.push({
-            productId: productId,
-            quantity: quantity,
+            productId,
+            quantity,
             deliveryOptionId: '1'
         });
     }

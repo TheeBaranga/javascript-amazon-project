@@ -54,7 +54,7 @@ function renderProductsGrid() {
 
             <div class="product-spacer"></div>
 
-            <div class="added-to-cart">
+            <div class="added-to-cart js-added-to-cart-${product.id}">
               <img src="images/icons/checkmark.png">
               Added
             </div>
@@ -80,23 +80,44 @@ function renderProductsGrid() {
 
   }
 
-  
+  const addedMessageTimeouts = {};
 
   document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
       button.addEventListener('click', () => {
-          const productId = button.dataset.productId;
+          const { productId } = button.dataset;
 
-          // 1. Finding the specific dropdown for this product
+          // Finding the specific dropdown for this product
           const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
           
-          // 2. Getting the value and turn it into a number
+          // Getting the value and turn it into a number
           const quantity = Number(quantitySelector.value);
 
-          // 3. Passing both the ID and the quantity to your cart function
+          // Passing both the ID and the quantity to your cart function
           addToCart(productId, quantity);
-          
           updateCartQuantity();
+
+
+          // Selects the unique "Added" message element for this product
+          const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+
+          // Adds the class that alters the opacity to make it visible
+          addedMessage.classList.add('added-to-cart-visible');
+
+          // Checks if this specific product already has an active timer running
+          const previousTimeoutId = addedMessageTimeouts[productId];
+          if (previousTimeoutId) {
+              // If it does, cancels that timer completely
+              clearTimeout(previousTimeoutId);
+          }
+
+          // Starts a fresh 2-second timer
+          const timeoutId = setTimeout(() => {
+              addedMessage.classList.remove('added-to-cart-visible');
+          }, 2000);
+
+          // Saves this new timer ID into our object so we can reset it on the next click
+          addedMessageTimeouts[productId] = timeoutId;
       });
   });
 }
