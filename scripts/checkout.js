@@ -1,7 +1,7 @@
 import { loadProducts, loadProductsFetch } from "../data/products.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
-import { loadCart } from "../data/cart.js";
+import { cart, loadCart } from "../data/cart.js";
 // import '../data/cart-class.js';
 // import "../data/backend-practice.js";
 
@@ -17,6 +17,8 @@ async function loadPage() {
             });
         });
 
+        displayQuantity();
+
     } catch (error) {
         console.log('Unexpected error, please try again later');
     }
@@ -27,7 +29,14 @@ async function loadPage() {
 }
 loadPage();
 
-
+function displayQuantity() {
+    let quantity = 0;
+        cart.forEach((cartItem) => {
+            quantity += cartItem.quantity
+        });
+    
+        document.querySelector('.js-cart-items-count').innerHTML = `${quantity} items`;
+}
 
 /*
 Promise.all([
