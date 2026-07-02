@@ -1,7 +1,7 @@
 import { loadProducts, loadProductsFetch } from "../data/products.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
-import { cart, loadCart, updateCartQuantity } from "../data/cart.js";
+import { cart, loadCart, calculateCartQuantity, updateQuantity } from "../data/cart.js";
 // import '../data/cart-class.js';
 // import "../data/backend-practice.js";
 
@@ -30,9 +30,10 @@ async function loadPage() {
 loadPage();
 
 function displayQuantity() {
-    updateCartQuantity();
-
+    const quantity = calculateCartQuantity();
     document.querySelector('.js-cart-items-count').innerHTML = `${quantity} items`;
+
+
 }
 
 /*

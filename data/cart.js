@@ -93,3 +93,12 @@ export function loadCart(fun) {
   xhr.open('GET', 'https://supersimplebackend.dev/cart');
   xhr.send();
 };
+
+export function updateQuantity(productId, newQuantity) {
+    const cartItem = cart.find((item) => item.productId === productId);
+    if (cartItem) {
+        cartItem.quantity = newQuantity;
+    }
+
+    saveToStorage();
+}
